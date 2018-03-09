@@ -1,6 +1,6 @@
 ---
 title: "ant_nest_nutrients"
-author: "Allison Horst"
+author: "Erica copied from Allison Horst"
 date: "March 6, 2018"
 output: html_document
 ---
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Short PCA example (commented out so you can see what happens one step at a time...)
 
 ###Get packages and ant nest nutrient data
-```{r}
+```{r library, message=FALSE}
 library(corrplot)
 library(tidyverse)
 
@@ -20,7 +20,7 @@ ant_nutrients <- read_csv("ant_nutrients.csv")
 ant_df <- rename(ant_nutrients, Na = X1) # Rename because it thinks it's NA
 ```
 
-```{r}
+```{r correlation_elements, message=FALSE}
 corrplot(cor(ant_df), method = "ellipse")
 # Other option:
 corrplot(cor(ant_df), type = "upper", method = "square")
